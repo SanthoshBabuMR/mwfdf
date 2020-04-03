@@ -1,0 +1,32 @@
+{
+	"name": "modifiers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mwfblobstorageconnectivity",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "30181_modifier_uaub (transformed).csv",
+				"container": "intermittentoutput"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Code",
+				"type": "String"
+			},
+			{
+				"name": "Modifier",
+				"type": "String"
+			}
+		]
+	}
+}
