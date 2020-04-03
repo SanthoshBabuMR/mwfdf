@@ -1,0 +1,76 @@
+{
+	"name": "rates_input",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mwfblobstorageconnectivity",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "rates_input.csv",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Proc Type",
+				"type": "String"
+			},
+			{
+				"name": "Proc Code",
+				"type": "String"
+			},
+			{
+				"name": "Procedure Description",
+				"type": "String"
+			},
+			{
+				"name": "Unit Value",
+				"type": "String"
+			},
+			{
+				"name": "Basic Rate",
+				"type": "String"
+			},
+			{
+				"name": "Child Rate",
+				"type": "String"
+			},
+			{
+				"name": "ER Rate",
+				"type": "String"
+			},
+			{
+				"name": "Conv Ind",
+				"type": "String"
+			},
+			{
+				"name": "ER Ind",
+				"type": "String"
+			},
+			{
+				"name": "Cutback Ind",
+				"type": "String"
+			},
+			{
+				"name": "Prof %",
+				"type": "String"
+			},
+			{
+				"name": "Rental Rate",
+				"type": "String"
+			},
+			{
+				"name": "Non-Physn Med Prac Ind",
+				"type": "String"
+			}
+		]
+	}
+}
