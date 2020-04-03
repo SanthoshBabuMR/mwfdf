@@ -26,6 +26,10 @@
 			{
 				"name": "Modifier",
 				"type": "String"
+			},
+			{
+				"name": "Amount",
+				"type": "String"
 			}
 		]
 	}
