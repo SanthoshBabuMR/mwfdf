@@ -5,7 +5,14 @@
 			{
 				"name": "medicaid_transform_dataflow",
 				"type": "ExecuteDataFlow",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "mwfcustomtransforms",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -23,6 +30,26 @@
 						"coreCount": 8,
 						"computeType": "General"
 					}
+				}
+			},
+			{
+				"name": "mwfcustomtransforms",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/sbabu41@entid.optumhub.net/mwfintermediatetransform"
+				},
+				"linkedServiceName": {
+					"referenceName": "mwfdatabricksconnectivity",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
