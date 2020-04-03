@@ -9,6 +9,12 @@
 					"referenceName": "mwfpipelineTESTDataBricks",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "mwfpipeline",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
