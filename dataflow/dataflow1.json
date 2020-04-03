@@ -1,0 +1,28 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "rates_input",
+						"type": "DatasetReference"
+					},
+					"name": "ratesinput"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "rates_output",
+						"type": "DatasetReference"
+					},
+					"name": "rates_output"
+				}
+			],
+			"transformations": [],
+			"script": "source(output(\n\t\t{Proc Type} as string,\n\t\t{Proc Code} as string,\n\t\t{Procedure Description} as string,\n\t\t{Unit Value} as string,\n\t\t{Basic Rate} as string,\n\t\t{Child Rate} as string,\n\t\t{ER Rate} as string,\n\t\t{Conv Ind} as string,\n\t\t{ER Ind} as string,\n\t\t{Cutback Ind} as string,\n\t\t{Prof %} as string,\n\t\t{Rental Rate} as string,\n\t\t{Non-Physn Med Prac Ind} as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> ratesinput\nratesinput sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> rates_output"
+		}
+	}
+}
